@@ -34,13 +34,15 @@ This technique allows the data to be returned faster and also with a much smalle
 Open the Manegement Portal and try execute the selects:
 
 ```
-select top 500 id, name from dc_data.Person where Name like '%jose%'
+    SELECT TOP 500 ID, Name FROM dc_data.Person WHERE Name LIKE '%jose%'
 ```
+Result:
+
 
 Compare to
 
 ```
-select id, name from dc_data.Person where id %INLIST dc.GetListIdsByName('jose')
+	SELECT ID, Name FROM dc_data.Person WHERE ID %INLIST dc.GetListIdsByName('jose',,,500)
 ```
 
 ## Dream team

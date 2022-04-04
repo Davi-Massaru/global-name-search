@@ -24,3 +24,28 @@ Open the terminal in this directory and run:
 $ docker-compose build && docker-compose up -d
 ```
 
+
+## Get Started
+
+Use this feature in a scenario where there is a many volume of data and you need to return a limited length of records, for example, when selecting selects or datacombos.
+
+This technique allows the data to be returned faster and also with a much smaller amount of global accesses than a "SELECT TOP", for example.
+
+Open the Manegement Portal and try execute the selects:
+
+```
+select top 500 id, name from dc_data.Person where Name like '%jose%'
+```
+
+Compare to
+
+```
+select id, name from dc_data.Person where id %INLIST dc.GetListIdsByName('jose')
+```
+
+## Dream team
+
+
+- [Jailton César Viçôzo](https://community.intersystems.com/user/jailton-vi%C3%A7%C3%B4zo)
+
+- [Davi Massaru Muta](https://community.intersystems.com/user/davi-massaru-teixeira-muta)

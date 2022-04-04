@@ -37,9 +37,10 @@ Open the Manegement Portal and try execute the selects:
     SELECT TOP 500 ID, Name FROM dc_data.Person WHERE Name LIKE '%jose%'
 ```
 Result:
+
 <img src="https://raw.githubusercontent.com/Davi-Massaru/global-name-search/main/with_like.jpeg"></img>
 
-Compare to
+#### Compare to
 
 ```
 	SELECT ID, Name FROM dc_data.Person WHERE ID %INLIST dc.GetListIdsByName('jose',,,500)

@@ -1,14 +1,6 @@
 Class dc.Search Extends %RegisteredObject [ Language = objectscript ]
 {
 
-ClassMethod Teste()
-{
-	s lista = ##class(dc.Search).GetListIdsByName(
-		"carolina"
-	)
-	w !, $LL(lista)
-}
-
 ClassMethod GetListIdsByName(pFirstName As %String = "", pMiddleName As %String = "", pLastName As %String = "", pTop As %Integer = 500) As %String [ SqlName = GetListIdsByName, SqlProc ]
 {
 	Return:(pFirstName = "") $LB("")

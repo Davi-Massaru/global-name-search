@@ -38,15 +38,22 @@ ClassMethod GetListIdsByName(pFirstName As %String = "", pMiddleName As %String 
 		Set tCtd = ..FindName(pTop, .tIDs, firstName, middleName, lastName)
 	}
 	
-	Set tCtd = 0
-	Set tListaIDs = ""
-	Set tID = $ORDER(tIDs(""))
-	While (tID) {
-		Set tCtd = tCtd + 1
-		Set $LIST(tListaIDs, tCtd) = tID
-		Set tID = $ORDER(tIDs(tID))
+	Return ..GetListIds(.tIDs)
+}
+
+ClassMethod GetListIds(ByRef pIDs) As %List
+{
+	Set count = 0
+	Set listIds = ""
+	
+	Set id = $ORDER(pIDs(""))
+	While (id) {
+		Set count = count + 1
+		Set $LIST(listIds, count) = id
+		Set id = $ORDER(pIDs(id))
 	}
-	Return tListaIDs
+	
+	Return listIds
 }
 
 ClassMethod FormatName(pName As %String) As %String

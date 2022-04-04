@@ -21,7 +21,8 @@ $ git clone https://github.com/Davi-Massaru/global-name-search.git
 Open the terminal in this directory and run:
 
 ```
-$ docker-compose build && docker-compose up -d
+$ docker-compose build
+$ docker-compose up -d
 ```
 
 
